@@ -33,7 +33,7 @@ body {
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-color: #b7e5fb;
+    background-color: #F2FFE3;
     position: absolute;
 }
 
@@ -50,8 +50,8 @@ body {
 }
 
 .molino {
-	margin-top: 20%;
-    margin-left: 38%;
+    margin-top: -22%;
+    margin-left: 61%;
     position: absolute;
     z-index: 0;
 }
@@ -102,7 +102,7 @@ body {
 }
 
 #conde {
-        background-color: #f1f1f1;
+        background-color: #F2FFE3;
     z-index: 100;
     position: absolute;
     width: 100%;
@@ -112,15 +112,16 @@ body {
 
 .ocean {
     position: absolute;
-    margin-top: 37%;
-    display: none;
+    margin-top: 40%;
+    /*display: none;*/
+    z-index: 1;
 }
 
-#creature{  
+#fish1{  
   width:40px;
   height:40px;
   left:-30px;
-  top: 470px;
+  top: 570px;
   position:absolute;
 }
 
@@ -128,7 +129,7 @@ body {
     position: absolute;
     top: 187px;
     left: 643px;
-    z-index: 200;
+    z-index: 1;
 }
 
 #sun {
@@ -154,7 +155,7 @@ body {
 }
 
 #pin {
-         position: absolute;
+    position: absolute;
     left: 79%;
     top: 49%;
 }
