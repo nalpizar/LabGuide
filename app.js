@@ -1,10 +1,11 @@
 function goToOrigen() {
     var tl = new TimelineMax();
     var origenArrow = document.getElementById("origen-arrow");
+    var pin = document.getElementById("pin");
 
-    tl.to('#pin', 2 / 4, {y:-500, ease:Power2.easeOut});
-    tl.to('#pin', 2 / 2, {y:0, ease:Bounce.easeOut, delay:2 / 4})
-    tl.fromTo('#bubble-3', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:3, ease:Bounce.easeOut})
+    tl.to('#pin', 2 / 4, {display: "block", y:0, ease:Power2.easeOut});
+    tl.to('#pin', 2 / 2, {y:380, ease:Bounce.easeOut, delay:2 / 4})
+    tl.fromTo('#bubble-3', 1.5, {scale:0, transformOrigin:"-32% 100% 0px"}, {scale:3, ease:Bounce.easeOut})
     tl.fromTo('.translado-title3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
     tl.fromTo('.translado-parag3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut}) 
 
@@ -15,6 +16,7 @@ function goToOrigen() {
     var condeSection = document.getElementById("conde");
     var transladoSection = document.getElementById("translado");
 
+    // pin.style.display = "block";
     condeSection.style.display = "none";
     transladoSection.style.display = "none";
 }
