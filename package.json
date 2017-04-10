@@ -5,7 +5,7 @@
   "scripts": {
     "start": "browser-sync start --server --files *.js, *.html, *.css"
   },
-  "author": "Esteban Padilla",
+  "author": "Natalia Alpizar",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.6"

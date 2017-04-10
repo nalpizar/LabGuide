@@ -1,15 +1,53 @@
-window.onload = function() {
-    //texto en menos cantidad 
-    //sol vivus
+function goToOrigen() {
+    var tl = new TimelineMax();
+    var origenArrow = document.getElementById("origen-arrow");
 
-    var tl1 = new TimelineMax();
-    var tl = new TimelineMax({delay:10});
-    var tl2 = new TimelineMax({delay:20});
+    tl.to('#pin', 2 / 4, {y:-500, ease:Power2.easeOut});
+    tl.to('#pin', 2 / 2, {y:0, ease:Bounce.easeOut, delay:2 / 4})
+    tl.fromTo('#bubble-3', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:3, ease:Bounce.easeOut})
+    tl.fromTo('.translado-title3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+    tl.fromTo('.translado-parag3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut}) 
+
+    setTimeout(function(){ 
+        origenArrow.classList.add("animated");
+    }, 5000);   
+
+    var condeSection = document.getElementById("conde");
+    var transladoSection = document.getElementById("translado");
+
+    condeSection.style.display = "none";
+    transladoSection.style.display = "none";
+}
+
+function goToTranslado() {
+    var transladoSection = document.getElementById("translado");
+    var tl = new TimelineMax();
+    var transladoArrow = document.getElementById("translado-arrow");
+
+    transladoSection.style.display = "block";
 
     function spin() {
         var spintl = new TimelineMax({repeat:-1});
         spintl.to('#wheel', 4, {transformOrigin:"50% 50%", rotation:360, ease: Power0.easeNone})
     }
+
+    tl.fromTo('#translado', 1, {opacity:0}, {opacity:1, ease:Power1.easeInOut});
+    tl.add(spin)
+    tl.fromTo('#bubble', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
+    tl.fromTo('.translado-title', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+    tl.fromTo('.translado-parag', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+
+    setTimeout(function(){ 
+        transladoArrow.classList.add("animated");
+    }, 5000);
+}
+
+function goToConde() {
+    var bezierTween;
+    var tl = new TimelineMax();
+    var condeSection = document.getElementById("conde");
+
+    condeSection.style.display = "block";
 
     function waves() {
         var wavetl = new TimelineMax({repeat:-1});
@@ -22,25 +60,13 @@ window.onload = function() {
         suntl.to('#sun', 4, {transformOrigin:"50% 50%", rotation:360, ease: Power0.easeNone})
     }
 
-    tl1.to('#pin', 2 / 4, {y:-500, ease:Power2.easeOut});
-    tl1.to('#pin', 2 / 2, {y:0, ease:Bounce.easeOut, delay:2 / 4})
-    tl1.fromTo('#bubble-3', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:3, ease:Bounce.easeOut})
-    tl1.fromTo('.translado-title3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-    tl1.fromTo('.translado-parag3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-    tl.fromTo('#translado', 1, {opacity:0}, {opacity:1, ease:Power1.easeInOut});
-    tl.add(spin)
-    tl.fromTo('#bubble', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
-    tl.fromTo('.translado-title', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-    tl.fromTo('.translado-parag', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-	tl2.fromTo('div .ocean', 1, { y:0}, {y:-60, display:'block'})
-    tl2.add(waves)
-    tl2.add(sun)
-    tl2.fromTo('#conde', 1, {opacity:0}, {opacity:1, ease:Power1.easeInOut});
-    tl2.fromTo('#bubble-2', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
-    tl2.fromTo('.translado-title2', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-    tl2.fromTo('.translado-parag2', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
-
-    var bezierTween;
+    tl.fromTo('div .ocean', 1, { y:0}, {y:-60, display:'block'})
+    tl.add(waves)
+    tl.add(sun)
+    tl.fromTo('#conde', 1, {opacity:0}, {opacity:1, ease:Power1.easeInOut});
+    tl.fromTo('#bubble-2', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
+    tl.fromTo('.translado-title2', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+    tl.fromTo('.translado-parag2', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
 
     bezierTween = new TweenMax("#fish1", 3, {
         bezier:{
@@ -50,5 +76,22 @@ window.onload = function() {
         },
         repeatDelay:4,
         delay:2,
-      ease:Linear.easeNone, repeat:-1});    
-};
+      ease:Linear.easeNone, repeat:-1}
+    );    
+}
+
+var scrollOrigen = true;
+
+$.event.add(window, "scroll", function() {
+    var hoverTop = $('#origen').offset().top,
+        hoverHeight = $('#origen').outerHeight(),
+        windowHeight = $(window).height(),
+        windowScrollTop = $(this).scrollTop();
+
+        if (windowScrollTop > (hoverTop + hoverHeight - windowHeight)) {
+            if(scrollOrigen) {
+                goToOrigen(); 
+                scrollOrigen = false;
+            } 
+        }
+});

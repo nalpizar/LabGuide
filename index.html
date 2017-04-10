@@ -11,29 +11,57 @@
     <script type="text/javascript" src="js/lib/scrollmagic/plugins/debug.addIndicators.js"></script>
     <script type="text/javascript" src="js/lib/scrollmagic/plugins/animation.gsap.js"></script>
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="app.js"></script>
 </head>
 
 <body>
+
+    <section id="landing"></section>
     <section id="origen">
+      <div id="trigger1" class="spacer s0"></div>
+      <div onclick="goToTranslado()" id="origen-arrow" class="arrow bounce">
+         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="30px" height="50px" viewBox="0 0 30 50" enable-background="new 0 0 30 50" xml:space="preserve">
+            <g>
+               <path fill="#3BA58B" d="M28.564,27.278L7.219,48.623c-1.358,1.358-3.559,1.358-4.916,0c-1.357-1.357-1.357-3.559,0-4.916
+                  l18.887-18.887L2.303,5.935c-1.357-1.358-1.357-3.559,0-4.916c1.357-1.358,3.559-1.358,4.916,0l21.345,21.345
+                  c0.679,0.679,1.018,1.568,1.018,2.457C29.582,25.71,29.242,26.6,28.564,27.278z"/>
+            </g>
+         </svg>
+      </div>
       <!-- Speech Bubble -->
       <svg version="1.1" id="bubble-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="309px" height="72px" viewBox="0 0 509 272" class="pink-bubble pink-bubble3" enable-background="new 0 0 509 272" xml:space="preserve">
          <path fill="#3BA58B" d="M254.931-0.136C115.025-0.136,1.606,57.428,1.606,128.439c0,26.169,15.443,50.497,41.9,70.804 c-3.476,23.462-13.477,56.509-41.9,72.605c0,0,86.85-6.901,145.683-27.013c32.679,7.796,69.148,12.178,107.643,12.178 c139.907,0,253.326-57.564,253.326-128.575S394.838-0.136,254.931-0.136z"/>
       </svg>
+
       <div class="translado-text translado-text2">
-         <h1 class="translado-title3">ORIGEN </h1>
+         <h1 id="origen-title" class="translado-title3">ORIGEN</h1>
          <p class="translado-parag3">
             Los antepasados del labrador actual se originaron en la isla de Terranova, ahora parte de la provincia de 
             Terranova y Labrador, Canadá.7 El precursor de la raza de Labrador fue el perro de aguas de San Juan, una raza que surgió a través de la cría hecha por los 
             primeros colonos de la isla en el siglo XVI.
          </p>
       </div>
-      <img src="img/map.png" alt="">
+      <img src="img/map.png" id="map" alt="">
+      <div id="trigger1"></div>
       <!-- Pin -->
       <div w3-include-html="svg-views/pin.html"></div> 
     </section>
     <section id="conde">
+       <div onclick="goToOrigen()" class="arrow animated bounce">
+         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="30px" height="50px" viewBox="0 0 30 50" enable-background="new 0 0 30 50" xml:space="preserve">
+            <g>
+               <path fill="#37979B" d="M2.302,22.363L23.648,1.019c1.358-1.358,3.559-1.358,4.916,0c1.357,1.357,1.357,3.559,0,4.916L9.677,24.821
+               l18.887,18.886c1.357,1.358,1.357,3.559,0,4.916c-1.357,1.358-3.559,1.358-4.916,0L2.302,27.279
+               c-0.679-0.679-1.018-1.568-1.018-2.457C1.284,23.932,1.624,23.042,2.302,22.363z"/>
+            </g>
+         </svg>
+      </div>
+
+      
       <!-- Sun -->
       <div w3-include-html="svg-views/sun.html"></div> 
       <!-- Speech Bubble -->
@@ -53,6 +81,16 @@
     </section>
 
     <section id="translado">
+      <div onclick="goToConde()" id="translado-arrow" class="arrow bounce">
+         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="30px" height="50px" viewBox="0 0 30 50" enable-background="new 0 0 30 50" xml:space="preserve">
+            <g>
+               <path fill="#F2FFE3" d="M28.564,27.278L7.219,48.623c-1.358,1.358-3.559,1.358-4.916,0c-1.357-1.357-1.357-3.559,0-4.916
+                  l18.887-18.887L2.303,5.935c-1.357-1.358-1.357-3.559,0-4.916c1.357-1.358,3.559-1.358,4.916,0l21.345,21.345
+                  c0.679,0.679,1.018,1.568,1.018,2.457C29.582,25.71,29.242,26.6,28.564,27.278z"/>
+            </g>
+         </svg>
+      </div>
       <!-- Speech Bubble -->
       <svg version="1.1" id="bubble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       width="309px" height="72px" viewBox="0 0 509 272" class="pink-bubble" enable-background="new 0 0 509 272" xml:space="preserve">
@@ -71,6 +109,8 @@
       <!-- Molino -->
       <div w3-include-html="svg-views/molino.html"></div> 
     </section>
+    <section id="other"></section>
+    
     <script>
       w3IncludeHTML();
    </script>
