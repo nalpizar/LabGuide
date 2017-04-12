@@ -233,12 +233,12 @@ body {
 }
 
 #landing,
-#other {
+#porque {
     height: 725px;
 }
 
-#other {
-        top: 1461px;
+#porque {
+    top: 1461px;
     position: absolute;
     width: 100%;
 }
@@ -257,7 +257,7 @@ body {
     margin: 0 auto;
 }
 
-#landing h1, #landing h2 {
+#landing h1, #landing h2, #adopcion h2 {
     font-family: 'comic_zine_otregular';
     color: #F2FFE3;
     font-size: 100px;
@@ -313,7 +313,7 @@ body {
 }
 
 .navbar-default.yourClass {
-    background-color: rgba(0, 0, 0, 0.84);
+    background-color: rgba(0, 0, 0, 0.61);
     padding: 0;
 }
 
@@ -321,4 +321,38 @@ body {
 .hidden-eyes-2,
 .hidden-eyes-3 {
     opacity: 0;
+}
+
+#adopcion h2 {
+    font-size: 60px;
+    color: #225378;
+}   
+
+.family-img {
+    width: 350px;
+    float: right;
+    margin: 180px 24% 0;
+}    
+
+#adopcion-bubble {
+    margin-top: 19.2%;
+    left: -54px;
+    height: 96px;
+    position: relative;
+}
+
+.adopcion-text {
+    margin-top: -332px;
+    width: 297px;
+    margin-left: 349px;
+}
+
+.hearts {
+    margin: -308px 494px 0 0;
+    float: right;
+}
+
+.chocolate-lab {
+    margin: -134px 459px 0 0;
+    float: right;
 }

@@ -6,7 +6,7 @@ function landing() {
     var tl = new TimelineMax({repeat:-1});
     var tl2 = new TimelineMax({repeat:-1});
     var tl3 = new TimelineMax({repeat:-1});
-    // var hiddenEyes = document.getElementById("hidden-eyes");
+
     function lengua() {
         var lenguatl = new TimelineMax({repeat:-1});
         lenguatl.to('#lengua_1_', 0.3, {y:0, ease:Power2.easeOut});
@@ -17,10 +17,6 @@ function landing() {
     tl.fromTo('.hidden-eyes', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3})
     tl2.fromTo('.hidden-eyes-2', 0.2, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:2});
     tl3.fromTo('.hidden-eyes-3', 0.2, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:4});
-
-    
-    // tl.to('#lengua_1_', 2 / 4, {display: "block", y:0, ease:Power2.easeOut});
-    // tl.to('#lengua_1_', 2 / 2, {y:380, ease:Bounce.easeOut, delay:2 / 4})
 }
 
 function goToOrigen() {
@@ -107,6 +103,24 @@ function goToConde() {
     );    
 }
 
+function Adopcion() {
+    var tl = new TimelineMax();
+
+    function hearts() {
+        var hearttl = new TimelineMax({repeat:-1});
+
+        hearttl.fromTo('.hearts', 1, {x:0,scale:1}, {scale:0.5, ease:Power1.easeOut})
+        hearttl.fromTo('.hearts', 1, {x:0,scale:0.5}, {scale:1, ease:Power1.easeOut});
+        // hearttl.fromTo('.hearts', 1, {x:0,scale:0.5}, {scale:1, ease:Power1.easeOut});
+    }
+
+    
+    tl.add(hearts)
+    tl.fromTo('#adopcion-bubble', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
+    tl.fromTo('.adopcion-parag', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut});
+
+}
+
 var scrollOrigen = true;
 
 $.event.add(window, "scroll", function() {
@@ -133,4 +147,20 @@ $.event.add(window, "scroll", function() {
     }
 
     console.log(top);   
+});
+
+var scrollOrigen2 = true;
+
+$.event.add(window, "scroll", function() {
+    var hoverTop = $('#adopcion').offset().top,
+        hoverHeight = $('#adopcion').outerHeight(),
+        windowHeight = $(window).height(),
+        windowScrollTop = $(this).scrollTop();
+        
+        if (windowScrollTop + 100 > (hoverTop + hoverHeight - windowHeight)) {
+            if(scrollOrigen2) {
+                Adopcion(); 
+                scrollOrigen2 = false;
+            } 
+        } 
 });
