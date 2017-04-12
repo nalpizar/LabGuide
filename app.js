@@ -1,3 +1,28 @@
+window.onload = function() {
+  landing();
+};
+
+function landing() {
+    var tl = new TimelineMax({repeat:-1});
+    var tl2 = new TimelineMax({repeat:-1});
+    var tl3 = new TimelineMax({repeat:-1});
+    // var hiddenEyes = document.getElementById("hidden-eyes");
+    function lengua() {
+        var lenguatl = new TimelineMax({repeat:-1});
+        lenguatl.to('#lengua_1_', 0.3, {y:0, ease:Power2.easeOut});
+        lenguatl.to('#lengua_1_', 0.3, {y:4, ease:Power2.easeOut})
+    }
+
+    tl.add(lengua)
+    tl.fromTo('.hidden-eyes', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3})
+    tl2.fromTo('.hidden-eyes-2', 0.2, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:2});
+    tl3.fromTo('.hidden-eyes-3', 0.2, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:4});
+
+    
+    // tl.to('#lengua_1_', 2 / 4, {display: "block", y:0, ease:Power2.easeOut});
+    // tl.to('#lengua_1_', 2 / 2, {y:380, ease:Bounce.easeOut, delay:2 / 4})
+}
+
 function goToOrigen() {
     var tl = new TimelineMax();
     var origenArrow = document.getElementById("origen-arrow");
