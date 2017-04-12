@@ -5,6 +5,10 @@
     <title>Labrador Guide</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/lib/scrollmagic/ScrollMagic.js"></script>
@@ -12,12 +16,78 @@
     <script type="text/javascript" src="js/lib/scrollmagic/plugins/animation.gsap.js"></script>
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <section id="landing">
+      <h1>Guia para</h1>
+      <div class="lab-head-container">
+        <div class="lab-heads" w3-include-html="svg-views/yellow-lab-head.html"></div> 
+        <div class="lab-heads" w3-include-html="svg-views/chocolate-lab-head.html"></div> 
+        <div class="lab-heads" w3-include-html="svg-views/black-lab-head.html"></div> 
+      </div>
+      <h2>Labradores</h2>
+      <!-- Navigation -->
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+          <div class="container">
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <!-- <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a> -->
+              </div>
 
-    <section id="landing"></section>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                  <ul class="nav navbar-nav">
+                      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                      <li class="hidden">
+                          <a class="page-scroll" href="#page-top"></a>
+                      </li>
+                      <li>
+                          <img src="img/historia-icon.png" alt="">
+                          <a class="page-scroll" href="#origen">Historia</a>
+                      </li>
+                      <li class="porque">
+                          <img src="img/porque.png" alt="">
+                          <a class="page-scroll" href="#porque">¿Por qué un Labrador?</a>
+                      </li>
+                      <li>
+                          <img src="img/cuidados.png" alt="">
+                          <a class="page-scroll" href="#cuidados">Cuidados</a>
+                      </li>
+                      <li>
+                          <img src="img/alimentacion-icon.png" alt="">
+                          <a class="page-scroll" href="#alimentacion">Alimentación</a>
+                      </li>
+                      <li>
+                          <img src="img/juegos-icon.png" alt="">
+                          <a class="page-scroll" href="#juegos">Juegos</a>
+                      </li>
+                      <li>
+                          <img src="img/padecimientos-icon.png" alt="">
+                          <a class="page-scroll" href="#padecimientos">Padecimientos</a>
+                      </li>
+                      <li>
+                          <img src="img/adopcion-icon.png" alt="">
+                          <a class="page-scroll" href="#adopcion">Adopción</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+      </nav>
+    </section>
     <section id="origen">
       <div id="trigger1" class="spacer s0"></div>
       <div onclick="goToTranslado()" id="origen-arrow" class="arrow bounce">
@@ -49,18 +119,7 @@
       <!-- Pin -->
       <div w3-include-html="svg-views/pin.html"></div> 
     </section>
-    <section id="conde">
-      <!--  <div onclick="goToOrigen()" class="arrow animated bounce">
-         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         width="30px" height="50px" viewBox="0 0 30 50" enable-background="new 0 0 30 50" xml:space="preserve">
-            <g>
-               <path fill="#37979B" d="M2.302,22.363L23.648,1.019c1.358-1.358,3.559-1.358,4.916,0c1.357,1.357,1.357,3.559,0,4.916L9.677,24.821
-               l18.887,18.886c1.357,1.358,1.357,3.559,0,4.916c-1.357,1.358-3.559,1.358-4.916,0L2.302,27.279
-               c-0.679-0.679-1.018-1.568-1.018-2.457C1.284,23.932,1.624,23.042,2.302,22.363z"/>
-            </g>
-         </svg>
-      </div> -->
-      
+    <section id="conde">      
       <!-- Sun -->
       <div w3-include-html="svg-views/sun.html"></div> 
       <!-- Speech Bubble -->

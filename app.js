@@ -90,10 +90,22 @@ $.event.add(window, "scroll", function() {
         windowHeight = $(window).height(),
         windowScrollTop = $(this).scrollTop();
 
-        if (windowScrollTop > (hoverTop + hoverHeight - windowHeight)) {
+        if (windowScrollTop + 100 > (hoverTop + hoverHeight - windowHeight)) {
             if(scrollOrigen) {
                 goToOrigen(); 
                 scrollOrigen = false;
             } 
         }
+
+    var top = window.pageYOffset || document.documentElement.scrollTop;
+    var nav = $("#navigation");    
+     
+
+    if (top >= 79) {
+        nav.addClass( "yourClass" );
+    } else {
+        nav.removeClass( "yourClass" )
+    }
+
+    console.log(top);   
 });
