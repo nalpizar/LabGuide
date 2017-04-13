@@ -21,7 +21,6 @@ function landing() {
 
 function goToOrigen() {
     var tl = new TimelineMax();
-    var origenArrow = document.getElementById("origen-arrow");
     var pin = document.getElementById("pin");
 
     tl.to('#pin', 2 / 4, {display: "block", y:0, ease:Power2.easeOut});
@@ -30,9 +29,7 @@ function goToOrigen() {
     tl.fromTo('.translado-title3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
     tl.fromTo('.translado-parag3', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut}) 
 
-    setTimeout(function(){ 
-        origenArrow.classList.add("animated");
-    }, 5000);   
+       
 
     var condeSection = document.getElementById("conde");
     var transladoSection = document.getElementById("translado");
@@ -111,12 +108,11 @@ function Adopcion() {
 
         hearttl.fromTo('.hearts', 1, {x:0,scale:1}, {scale:0.5, ease:Power1.easeOut})
         hearttl.fromTo('.hearts', 1, {x:0,scale:0.5}, {scale:1, ease:Power1.easeOut});
-        // hearttl.fromTo('.hearts', 1, {x:0,scale:0.5}, {scale:1, ease:Power1.easeOut});
     }
 
     
     tl.add(hearts)
-    tl.fromTo('#adopcion-bubble', 1.5, {scale:0, transformOrigin:"0 100%"}, {scale:4, ease:Bounce.easeOut})
+    tl.fromTo('#adopcion-bubble', 1.5, {scale:0, transformOrigin:"100% 100% 50%"}, {scale:4, ease:Bounce.easeOut})
     tl.fromTo('.adopcion-parag', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut});
 
 }
@@ -146,7 +142,13 @@ $.event.add(window, "scroll", function() {
         nav.removeClass( "yourClass" )
     }
 
-    console.log(top);   
+    console.log(top); 
+
+    var origenArrow = document.getElementById("origen-arrow");
+
+    setTimeout(function(){ 
+        origenArrow.classList.add("animated");
+    }, 5000);
 });
 
 var scrollOrigen2 = true;
