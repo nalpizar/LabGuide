@@ -258,7 +258,11 @@ body {
     margin: 0 auto;
 }
 
-#landing h1, #landing h2, #adopcion h2, #porque h2 {
+#landing h1, 
+#landing h2, 
+#adopcion h2, 
+#porque h2, 
+#cuidados h2 {
     font-family: 'comic_zine_otregular';
     color: #F2FFE3;
     font-size: 100px;
@@ -411,6 +415,7 @@ body {
     text-align: center;
     padding: 0;
     margin: 0 0 3em;
+    margin-top: 60px;
 }
 
 .dummy-menu ul li {
@@ -434,7 +439,7 @@ body {
     height: 2em;
     font-size: 2em;
     line-height: 1.75;
-    margin-bottom: 39px;
+    margin-bottom: 25px;
 }
 
 /*tooltip mas*/
@@ -451,16 +456,50 @@ body {
     font-size: 2em;
 }
 
+.tooltip2 img {
+    width: 100%;
+    height: auto;
+}
+
+.reason-1-active,
+.reason-2-active,
+.reason-3-active,
+.reason-4-active,
+.reason-5-active,
+.reason-6-active,
+.reason-7-active,
+.reason-8-active,
+.reason-9-active,
+.reason-10-active {
+    margin-top: -113px;
+    /*display: none;*/
+    transition: opacity 0.5s ease-out;
+    opacity: 0; 
+}
+
+.reason-1:hover .reason-1-active,
+.reason-2:hover .reason-2-active,
+.reason-3:hover .reason-3-active,
+.reason-4:hover .reason-4-active,
+.reason-5:hover .reason-5-active,
+.reason-6:hover .reason-6-active,
+.reason-7:hover .reason-7-active,
+.reason-8:hover .reason-8-active,
+.reason-9:hover .reason-9-active,
+.reason-10:hover .reason-10-active {
+    opacity: 1;
+}
+
 .tooltip-content {
     position: absolute;
     background: url(../svg/shape1.svg) no-repeat center bottom;
     background-size: 100% 100%;
     z-index: 9999;
     width: 200px;
-    bottom: -53px;
+    bottom: 0;
     left: 100%;
-    margin-left: 0;
-    padding: 50px 30px;
+    margin-left: -12px;
+    padding: 73px 30px;
     text-align: center;
     color: #fff;
     opacity: 0;
@@ -479,6 +518,11 @@ body {
     transition-timing-function: ease, cubic-bezier(0.6,0,0.4,1);
 }
 
+#right-col .tooltip-content {
+    left: 0;
+    margin-left: -192px;
+}
+
 .tooltip2:hover .tooltip-content {
     opacity: 1;
     pointer-events: auto;
@@ -493,14 +537,156 @@ body {
     position: absolute;
     width: 16px;
     height: 16px;
-    left: 50%;
+    left: 57%;
     margin-left: -104px;
     top: 52%;
-    background: #00AEEF;
+    background: #673ab7;
     -webkit-transform: translate3d(0,-60%,0) rotate3d(0,0,1,45deg);
     transform: translate3d(0,-60%,0) rotate3d(0,0,1,45deg);
 }
 
+#right-col .tooltip-content::after {
+    left: 100%;
+    margin-left: -26px;
+}
+bootstrap.min.css:5
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 #porque h2 {
     color: #F0DEC9;
+}
+
+.ul-line-1,
+.ul-line-2,
+.ul-line-3,
+.ul-line-4 {
+    height: 47px;
+    width: 1px;
+    background: #F0DEC9;
+    position: absolute;
+    margin: 118px 0 0 63px;
+}
+
+.ul-line-2 {
+    margin: 207px 0 0 63px;
+}
+
+.ul-line-3 {
+    margin: 296px 0 0 63px;
+}
+
+.ul-line-4 {
+    margin: 385px 0 0 63px;
+}
+
+#right-col {
+    position: absolute;
+    float: right;
+    left: 60%;
+    top: 74.6%;
+}
+
+#box {
+    width: 460px;
+    height: 460px;
+    position: relative;
+    top: -140px;
+    left: 874px;
+    text-indent: 90px;
+    transform-origin: center top;
+    background-image: url('../img/box.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 9;
+}
+
+#box.animated {
+    -webkit-animation: dangle 2s 1;
+}
+
+@-webkit-keyframes dangle {
+    0% { -webkit-transform: rotate(28deg); }
+    10% { -webkit-transform: rotate(-26deg); }
+    20% { -webkit-transform: rotate(24deg); }
+    30% { -webkit-transform: rotate(-22deg); }
+    40% { -webkit-transform: rotate(20deg); }
+    50% { -webkit-transform: rotate(-18deg); }
+    60% { -webkit-transform: rotate(16deg); }
+    70% { -webkit-transform: rotate(-14deg); }
+    80% { -webkit-transform: rotate(10deg); }
+}
+
+#cuidados h2 {
+    float: right;
+    margin-right: 153px;
+    padding: 73px 0;
+    width: 400px;
+    font-size: 52px;
+    position: relative;
+    z-index: 9999;
+}
+
+.box-text {
+    color: #F2FFE3;
+    width: 425px;
+    float: right;
+    z-index: 99999;
+    position: relative;
+    margin: 131px 15px 0 0;
+}
+
+#black-dog {
+    width: 261px;
+    height: 301px;
+    position: absolute;
+    margin: 0 23%;
+    z-index: 9;
+}
+
+.board {
+    width: 500px;
+    float: right;
+    position: relative;
+    margin: 9px -462px 0 0;
+    z-index: 999;"
+}
+
+#hidden-eyes-black {
+    opacity: 0;
+}
+
+#unas {
+    top: -250px;
+    position: relative;
+    /*left: -4px;*/
+    z-index: 9;
+}
+
+#hand {
+    left: 200px;
+    position: absolute;
+}
+
+.floor {
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    background: #1595a3;
+    top: -224px;
+    position: relative;
+}
+
+.hair-text,
+#brush {
+    opacity: 0;
+    display: none;
+}
+
+#brush {
+    position: absolute;
+    margin: -446px 0 0 197px;
 }

@@ -9,8 +9,8 @@ function landing() {
 
     function lengua() {
         var lenguatl = new TimelineMax({repeat:-1});
-        lenguatl.to('#lengua_1_', 0.3, {y:0, ease:Power2.easeOut});
-        lenguatl.to('#lengua_1_', 0.3, {y:4, ease:Power2.easeOut})
+        lenguatl.to('.lengua', 0.3, {y:0, ease:Power2.easeOut});
+        lenguatl.to('.lengua', 0.3, {y:4, ease:Power2.easeOut})
     }
 
     tl.add(lengua)
@@ -142,7 +142,7 @@ $.event.add(window, "scroll", function() {
         nav.removeClass( "yourClass" )
     }
 
-    console.log(top); 
+    // console.log(top); 
 
     var origenArrow = document.getElementById("origen-arrow");
 
@@ -163,6 +163,65 @@ $.event.add(window, "scroll", function() {
             if(scrollOrigen2) {
                 Adopcion(); 
                 scrollOrigen2 = false;
+            } 
+        } 
+});
+
+function Cuidados() {
+    $("#box").addClass( "animated" );
+    
+    var tl6 = new TimelineMax({repeat:-1});
+
+     function lenguaComplete() {
+        var lengua1tl = new TimelineMax({repeat:-1});
+
+        lengua1tl.to('#lenguaComplete', 0.3, {y:0, ease:Power2.easeOut});
+        lengua1tl.to('#lenguaComplete', 0.3, {y:4, ease:Power2.easeOut})
+    }  
+
+    tl6.add(lenguaComplete)
+    tl6.fromTo('#hidden-eyes-black', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3});
+
+    Cuidado1();
+
+}
+
+function Cuidado1() {
+
+    var tl = new TimelineMax();
+
+    function lima() {
+        var limatl = new TimelineMax({repeat:-1});
+
+        limatl.fromTo('#hand', 0.8, {x: 0}, {x: 160, ease: Power0.easeNone})
+        limatl.fromTo('#hand', 0.8, {x: 160}, {x: 0, ease: Power0.easeNone});
+    }  
+
+    tl.add(lima);
+}
+
+function Cuidado2() {
+
+    var tl = new TimelineMax();
+
+    tl.to('#hand', 0.5, {opacity: 0, display: "none"})
+    tl.to('.nails-text', 0.5, {opacity: 0, display:"none"})
+    tl.to('.hair-text', 0.5, {opacity: 1, display:"block"});
+    tl.to('#brush', 0.5, {opacity: 1, display:"block"});
+}
+
+var scrollCuidados = true;
+
+$.event.add(window, "scroll", function() {
+    var hoverTop = $('#cuidados').offset().top,
+        hoverHeight = $('#cuidados').outerHeight(),
+        windowHeight = $(window).height(),
+        windowScrollTop = $(this).scrollTop();
+        
+        if (windowScrollTop + 100 > (hoverTop + hoverHeight - windowHeight)) {
+            if(scrollCuidados) {
+                Cuidados();
+                scrollCuidados = false;
             } 
         } 
 });
