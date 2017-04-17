@@ -114,7 +114,7 @@ body {
 
 .ocean {
     position: absolute;
-    margin-top: 45%;
+    margin-top: 653px;
     z-index: 1;
 }
 
@@ -262,7 +262,8 @@ body {
 #landing h2, 
 #adopcion h2, 
 #porque h2, 
-#cuidados h2 {
+#cuidados h2,
+#padecimientos h2 {
     font-family: 'comic_zine_otregular';
     color: #F2FFE3;
     font-size: 100px;
@@ -676,7 +677,7 @@ bootstrap.min.css:5
     left: 0;
     height: 150px;
     background: #1595a3;
-    top: -224px;
+    top: -280px;
     position: relative;
 }
 
@@ -689,4 +690,49 @@ bootstrap.min.css:5
 #brush {
     position: absolute;
     margin: -446px 0 0 197px;
+    z-index: 8;
 }
+
+#padecimientos h2 {
+    font-size: 60px;
+}
+
+.sad-yellow-lab {
+    width: 461px;
+    position: absolute;
+    left: 130px;
+}
+
+.numbers {
+    width: 800px;
+    float: right;
+    padding-right: 70px;
+}
+
+.numbers li {
+    list-style: none;
+}
+
+.svg-numbers {
+    width: 20%;
+    padding: 65px;
+}
+
+.text-for-numbers {
+    width: 80%;
+}
+
+.svg-numbers,
+.text-for-numbers {
+    float: left;
+}
+
+.text-for-numbers {
+    color: #F2FFE3;
+    opacity: 0;
+}
+
+.text-for-numbers h3 {
+    color: #fee187;
+}
+

@@ -91,7 +91,7 @@ function goToConde() {
     bezierTween = new TweenMax("#fish1", 3, {
         bezier:{
           type:"soft", 
-          values:[{x:400, y:-250}, {x:560, y:250}],
+          values:[{x:400, y:-250}, {x:560, y:120}],
           autoRotate:true
         },
         repeatDelay:4,
@@ -204,10 +204,19 @@ function Cuidado2() {
 
     var tl = new TimelineMax();
 
+    function brush() {
+        var brushtl = new TimelineMax({repeat:-1});
+
+        brushtl.fromTo('#brush', 0.5, {x:0, y:0}, {x:60, y:40})
+        brushtl.fromTo('#brush', 0.5, {x:60, y:40}, {x:60, y:140})
+        brushtl.fromTo('#brush', 0.5, {x:60, y:140}, {x:0, y:0});
+    }
+
     tl.to('#hand', 0.5, {opacity: 0, display: "none"})
     tl.to('.nails-text', 0.5, {opacity: 0, display:"none"})
-    tl.to('.hair-text', 0.5, {opacity: 1, display:"block"});
-    tl.to('#brush', 0.5, {opacity: 1, display:"block"});
+    tl.to('.hair-text', 0.5, {opacity: 1, display:"block"})
+    tl.to('#brush', 0.5, {opacity: 1, display:"block"})
+    tl.add(brush);
 }
 
 var scrollCuidados = true;
@@ -222,6 +231,43 @@ $.event.add(window, "scroll", function() {
             if(scrollCuidados) {
                 Cuidados();
                 scrollCuidados = false;
+            } 
+        } 
+});
+
+function Padecimientos() {
+    var tl = new TimelineMax();
+
+    function head() {
+        var headtl = new TimelineMax({repeat:-1});
+
+        headtl.fromTo('#head', 1, {y:0, x:0}, {y:3, x:3, ease:Power2.easeOut});
+        headtl.fromTo('#head', 1, {y:3, x:3}, {y:0, x:0, ease:Power2.easeOut});
+    }  
+
+    tl.add(head)
+    tl.fromTo('#num-1', 1, {scale:0}, {scale:50, ease:Bounce.easeOut})
+    tl.fromTo('#text-for-numbers-1', 1, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+    tl.fromTo('#num-2', 1, {scale:0}, {scale:50, ease:Bounce.easeOut, delay:2})
+    tl.fromTo('#text-for-numbers-2', 1, {opacity:0}, {opacity:1, ease:Power1.easeOut})
+     tl.fromTo('#num-3', 1, {scale:0}, {scale:50, ease:Bounce.easeOut, delay:2})
+    tl.fromTo('#text-for-numbers-3', 1, {opacity:0}, {opacity:1, ease:Power1.easeOut});
+    // tl.fromTo('.hidden-eyes', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3})
+
+}
+
+var scrollPadecimientos = true;
+
+$.event.add(window, "scroll", function() {
+    var hoverTop = $('#padecimientos').offset().top,
+        hoverHeight = $('#padecimientos').outerHeight(),
+        windowHeight = $(window).height(),
+        windowScrollTop = $(this).scrollTop();
+        
+        if (windowScrollTop + 100 > (hoverTop + hoverHeight - windowHeight)) {
+            if(scrollPadecimientos) {
+                Padecimientos();
+                scrollPadecimientos = false;
             } 
         } 
 });
