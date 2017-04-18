@@ -271,3 +271,134 @@ $.event.add(window, "scroll", function() {
             } 
         } 
 });
+
+// Ball
+
+function Juegos() {
+// setup 1st master timeline
+var bounceTL = new TimelineMax({
+  paused: true,
+  repeat: -1
+});
+
+////////////////////////////////////////////
+/* ball bounce up and down child timeline */
+function ballBounce() {
+
+  var tl = new TimelineMax();
+
+  tl
+
+  /* ball bounce up */
+    .to("#mc_ball", 0.5, {
+    transformOrigin: "50% 50%",
+    y: 90,
+    ease: Circ.easeOut
+    //ease: Power1.easeInOut
+  }, "bounce")
+
+  /* ball bounce down */
+  .to("#mc_ball", 0.4, {
+    transformOrigin: "50% 50%",
+    y: 279,
+    ease: Circ.easeIn
+      //ease: Power1.easeInOut
+  }, "bounce2")
+
+  /* ball squash */
+  .to("#mc_ball", 0.15, {
+    transformOrigin: "50% 100%",
+    scaleX: 1.5,
+    scaleY: 0.6,
+    ease: Power1.easeInOut
+    //ease: Bounce.easeOut
+  }, "bounce3-=0.04")
+
+  /* ball rotateZ around */
+  .to("#mc_ball_base", 1, {
+    force3D: true,
+    rotation: "+=360",
+    ease: Power0.easeNone
+  }, "bounce")
+
+  return tl;
+}
+
+////////////////////////////////////////
+/* ball shadow stretch child timeline */
+function ballShadow() {
+
+  var tl = new TimelineMax();
+
+  tl
+
+  /* ball shadow stretch */
+    .to("#mc_shadow", 0.5, {
+      transformOrigin: "50% 50%",
+      autoAlpha: 0.15,
+      scaleX: 1.7,
+      scaleY: 1.2,
+      ease: Power1.easeInOut
+    }) //, "bounce"
+
+  /* ball shadow normal */
+  .to("#mc_shadow", 0.5, {
+      transformOrigin: "50% 50%",
+      autoAlpha: 1,
+      scaleX: 1,
+      scaleY: 1,
+      ease: Power1.easeInOut
+    }) //, "bounce2"
+
+  return tl;
+}
+
+window.requestAnimationFrame(function() {
+
+  //////////////
+  /* masterTL */
+
+  bounceTL
+    .add(ballBounce(), "ball")
+    .add(ballShadow(), "ball")
+
+    .progress(1).progress(0)
+    //.timeScale(0.9)
+    .play();
+
+});
+
+};
+
+var scrollJuegos = true;
+
+$.event.add(window, "scroll", function() {
+  var hoverTop = $('#juegos').offset().top,
+      hoverHeight = $('#juegos').outerHeight(),
+      windowHeight = $(window).height(),
+      windowScrollTop = $(this).scrollTop();
+      
+      if (windowScrollTop + 100 > (hoverTop + hoverHeight - windowHeight)) {
+          if(scrollJuegos) {
+
+              TweenLite.set("#mc_shadow", {
+                transformOrigin: "50% 50%",
+                x: 600,
+                y: 605
+              });
+
+              TweenLite.set("#mc_ball", {
+                transformOrigin: "50% 50%",
+                x: 300,
+                y: 279
+              });
+
+              TweenLite.set("#mc_ball_base", {
+                transformOrigin: "50% 50%"
+              });
+
+              Juegos();
+              scrollJuegos = false;
+          } 
+      } 
+});
