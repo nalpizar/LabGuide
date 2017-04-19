@@ -275,99 +275,113 @@ $.event.add(window, "scroll", function() {
 // Ball
 
 function Juegos() {
-// setup 1st master timeline
-var bounceTL = new TimelineMax({
-  paused: true,
-  repeat: -1
-});
+  // setup 1st master timeline
+  var bounceTL = new TimelineMax({
+    paused: true,
+    repeat: -1
+  });
 
-////////////////////////////////////////////
-/* ball bounce up and down child timeline */
-function ballBounce() {
+  ////////////////////////////////////////////
+  /* ball bounce up and down child timeline */
+  function ballBounce() {
 
-  var tl = new TimelineMax();
+    var tl = new TimelineMax();
 
-  tl
+    tl
 
-  /* ball bounce up */
-    .to("#mc_ball", 0.5, {
-    transformOrigin: "50% 50%",
-    y: 90,
-    ease: Circ.easeOut
-    //ease: Power1.easeInOut
-  }, "bounce")
-
-  /* ball bounce down */
-  .to("#mc_ball", 0.4, {
-    transformOrigin: "50% 50%",
-    y: 279,
-    ease: Circ.easeIn
+    /* ball bounce up */
+      .to("#mc_ball", 0.5, {
+      transformOrigin: "50% 50%",
+      y: 90,
+      ease: Circ.easeOut
       //ease: Power1.easeInOut
-  }, "bounce2")
+    }, "bounce")
 
-  /* ball squash */
-  .to("#mc_ball", 0.15, {
-    transformOrigin: "50% 100%",
-    scaleX: 1.5,
-    scaleY: 0.6,
-    ease: Power1.easeInOut
-    //ease: Bounce.easeOut
-  }, "bounce3-=0.04")
+    /* ball bounce down */
+    .to("#mc_ball", 0.4, {
+      transformOrigin: "50% 50%",
+      y: 279,
+      ease: Circ.easeIn
+        //ease: Power1.easeInOut
+    }, "bounce2")
 
-  /* ball rotateZ around */
-  .to("#mc_ball_base", 1, {
-    force3D: true,
-    rotation: "+=360",
-    ease: Power0.easeNone
-  }, "bounce")
+    /* ball squash */
+    .to("#mc_ball", 0.15, {
+      transformOrigin: "50% 100%",
+      scaleX: 1.5,
+      scaleY: 0.6,
+      ease: Power1.easeInOut
+      //ease: Bounce.easeOut
+    }, "bounce3-=0.04")
 
-  return tl;
-}
+    /* ball rotateZ around */
+    .to("#mc_ball_base", 1, {
+      force3D: true,
+      rotation: "+=360",
+      ease: Power0.easeNone
+    }, "bounce")
 
-////////////////////////////////////////
-/* ball shadow stretch child timeline */
-function ballShadow() {
+    return tl;
+  }
 
-  var tl = new TimelineMax();
+  ////////////////////////////////////////
+  /* ball shadow stretch child timeline */
+  function ballShadow() {
 
-  tl
+    var tl = new TimelineMax();
 
-  /* ball shadow stretch */
+    tl
+
+    /* ball shadow stretch */
+      .to("#mc_shadow", 0.5, {
+        transformOrigin: "50% 50%",
+        autoAlpha: 0.15,
+        scaleX: 1.7,
+        scaleY: 1.2,
+        ease: Power1.easeInOut
+      }) //, "bounce"
+
+    /* ball shadow normal */
     .to("#mc_shadow", 0.5, {
-      transformOrigin: "50% 50%",
-      autoAlpha: 0.15,
-      scaleX: 1.7,
-      scaleY: 1.2,
-      ease: Power1.easeInOut
-    }) //, "bounce"
+        transformOrigin: "50% 50%",
+        autoAlpha: 1,
+        scaleX: 1,
+        scaleY: 1,
+        ease: Power1.easeInOut
+      }) //, "bounce2"
 
-  /* ball shadow normal */
-  .to("#mc_shadow", 0.5, {
-      transformOrigin: "50% 50%",
-      autoAlpha: 1,
-      scaleX: 1,
-      scaleY: 1,
-      ease: Power1.easeInOut
-    }) //, "bounce2"
+    return tl;
+  }
 
-  return tl;
-}
+  window.requestAnimationFrame(function() {
 
-window.requestAnimationFrame(function() {
+    //////////////
+    /* masterTL */
 
-  //////////////
-  /* masterTL */
+    bounceTL
+      .add(ballBounce(), "ball")
+      .add(ballShadow(), "ball")
 
-  bounceTL
-    .add(ballBounce(), "ball")
-    .add(ballShadow(), "ball")
+      .progress(1).progress(0)
+      //.timeScale(0.9)
+      .play();
 
-    .progress(1).progress(0)
-    //.timeScale(0.9)
-    .play();
+  });
+  // Frisbee Animation
+  // function frisbee() {
+  //   var tl = new TimelineMax();
 
-});
+  //   function spinFrisbee() {
+  //       var spinFrisbeetl = new TimelineMax({repeat:-1});
+  //       spinFrisbeetl.to('#frisbee', 0.8, {transformOrigin:"50% 50%", rotation:360, ease: Power0.easeNone})
+  //   }
 
+  //   tl.add(spinFrisbee)
+  //   tl.fromTo('#frisbee', 1, {x:0, y:0}, {x:250, y:-180, ease:Power1.easeInOut});
+  
+  //   return tl;
+  // }
+  // frisbee();
 };
 
 var scrollJuegos = true;

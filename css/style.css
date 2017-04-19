@@ -263,7 +263,8 @@ body {
 #adopcion h2, 
 #porque h2, 
 #cuidados h2,
-#padecimientos h2 {
+#padecimientos h2,
+#juegos h2 {
     font-family: 'comic_zine_otregular';
     color: #F2FFE3;
     font-size: 100px;
@@ -734,4 +735,60 @@ bootstrap.min.css:5
 
 .text-for-numbers h3 {
     color: #fee187;
+}
+
+/*.frisbee-container {
+    margin-top: 250px;
+    position: absolute;
+    margin-left: 16px;
+}
+
+#ball-animation {
+    margin-top: 120px;
+    position: absolute;
+}*/
+
+#juegos h2 {
+    font-size: 60px;
+}
+
+.text-games {
+    background-image: url(../img/text-games.png);
+    width: 800px;
+    height: 200px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    float: right;
+}
+
+.text-games span {
+    margin: 37px 57px;
+    display: block;
+    font-size: 80px;
+    font-family: 'comic_zine_otregular';
+    color: #ce9109;
+}
+
+.text-games > div {
+    float: right;
+    width: 563px;
+    margin: -175px 213px;
+    position: absolute;
+    color: #fff;
+}
+
+.text-games > div h3 {
+    color: #ce9109;
+}
+
+.text-1 {
+    margin: -120px 63px 0 0;
+}
+
+.text-2 {
+    margin: 0 63px 0 0;
+}
+
+.text-3 {
+    margin: 0 63px 0 0;
 }
