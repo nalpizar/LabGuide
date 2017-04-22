@@ -57,6 +57,10 @@ function goToTranslado() {
     tl.fromTo('.translado-title', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
     tl.fromTo('.translado-parag', 0.5, {opacity:0}, {opacity:1, ease:Power1.easeOut})
 
+    $(transladoArrow).hover(
+       function(){ $(this).removeClass('animated') }
+    )
+
     setTimeout(function(){ 
         transladoArrow.classList.add("animated");
     }, 5000);
@@ -146,6 +150,10 @@ $.event.add(window, "scroll", function() {
 
     var origenArrow = document.getElementById("origen-arrow");
 
+    $(origenArrow).hover(
+       function(){ $(this).removeClass('animated') }
+    )
+
     setTimeout(function(){ 
         origenArrow.classList.add("animated");
     }, 5000);
@@ -196,8 +204,8 @@ function Cuidado1() {
         limatl.fromTo('#hand', 0.8, {x: 0}, {x: 160, ease: Power0.easeNone})
         limatl.fromTo('#hand', 0.8, {x: 160}, {x: 0, ease: Power0.easeNone});
     }  
-
     tl.add(lima);
+    
 }
 
 function Cuidado2() {
@@ -216,7 +224,63 @@ function Cuidado2() {
     tl.to('.nails-text', 0.5, {opacity: 0, display:"none"})
     tl.to('.hair-text', 0.5, {opacity: 1, display:"block"})
     tl.to('#brush', 0.5, {opacity: 1, display:"block"})
-    tl.add(brush);
+    tl.add(brush)
+    tl.to('#cuidado2', 0.5, {opacity: 0, display:"none"})
+    tl.to('#cuidado3', 0.5, {opacity: 1, display:"block"});
+}
+
+function Cuidado3() {
+
+    var tl = new TimelineMax();
+
+    function wipe() {
+      var tl = new TimelineMax({repeat:-1});
+
+      tl.fromTo('#wipe', 0.5, {y: 0, x:0}, {y:5, x:5})
+      tl.fromTo('#wipe', 0.5, {y: 5, x:5}, {y:0, x: 0});
+    } 
+
+    tl.to('#brush', 0.5, {opacity: 0, display:"none"})
+    tl.to('.hair-text', 0.5, {opacity: 0, display:"none"})
+    tl.to('.ear-text', 0.5, {opacity: 1, display:"block"})
+    tl.to('#oreja', 0.5, {opacity: 0, display:"none"})
+    tl.to('#flip-ear', 0.5, {opacity: 1, display:"block"})
+    tl.to('#wipe', 0.5, {opacity: 1, display:"block"})
+    tl.add(wipe)
+    tl.to('#cuidado3', 0.5, {opacity: 0, display:"none"})
+    tl.to('#cuidado4', 0.5, {opacity: 1, display:"block"});
+   
+}
+
+function Cuidado4() {
+
+    var tl = new TimelineMax(); 
+
+    function espuma() {
+      var tl = new TimelineMax({repeat:-1});
+
+      tl.fromTo('#espuma', 1, {scale:0, opacity:0}, {scale:0.2, opacity:0.2})
+      tl.fromTo('#espuma', 1, {scale:0.2, opacity:0.2}, {scale:0.5, opacity:0.5})
+      tl.fromTo('#espuma', 1, {x:0, scale:0.5, opacity:0.5}, {x:20, scale:0.8, opacity:0.8})
+      tl.fromTo('#espuma', 1, {scale:0.8, opacity:0.8}, {scale:1, opacity:1});
+    } 
+
+    function cepillo() {
+      var tl = new TimelineMax({repeat:-1});
+
+      tl.fromTo('#tooth-brush', 0.5, {x:0}, {x:20});
+      tl.fromTo('#tooth-brush', 0.5, {x:20}, {x:0});
+    } 
+
+    tl.to('#wipe', 0.5, {opacity: 0, display:"none"})
+    tl.to('.ear-text', 0.5, {opacity: 0, display:"none"})
+    tl.to('.teeth-text', 0.5, {opacity: 1, display:"block"})
+    tl.to('#flip-ear', 0.5, {opacity: 1, display:"none"})
+    tl.to('#oreja', 0.5, {opacity: 1, display:"block"})
+    // tl.to('#espuma', 0.5, {opacity: 1, display:"block"})
+    tl.to('#tooth-brush', 0.5, {opacity: 1, display:"block"})
+    tl.add(cepillo)
+    tl.add(espuma);
 }
 
 var scrollCuidados = true;
@@ -367,22 +431,24 @@ function Juegos() {
       .play();
 
   });
-  // Frisbee Animation
-  // function frisbee() {
-  //   var tl = new TimelineMax();
-
-  //   function spinFrisbee() {
-  //       var spinFrisbeetl = new TimelineMax({repeat:-1});
-  //       spinFrisbeetl.to('#frisbee', 0.8, {transformOrigin:"50% 50%", rotation:360, ease: Power0.easeNone})
-  //   }
-
-  //   tl.add(spinFrisbee)
-  //   tl.fromTo('#frisbee', 1, {x:0, y:0}, {x:250, y:-180, ease:Power1.easeInOut});
-  
-  //   return tl;
-  // }
-  // frisbee();
 };
+
+function otherToys() {
+  var tl = new TimelineMax();
+
+  function spinFrisbee() {
+    var spinFrisbeetl = new TimelineMax({repeat:-1});
+    spinFrisbeetl.to('#frisbee', 0.8, {transformOrigin:"50% 50%", rotation:360, ease: Power0.easeNone})
+  }
+
+  tl.fromTo('#text-1', 1.5, {scale:0}, {scale:1, ease:Bounce.easeOut})
+  tl.fromTo('#text-2', 1.5, {scale:0}, {scale:1, ease:Bounce.easeOut, delay:1})
+  tl.fromTo('#bone', 1.5, {scale:0}, {scale:1, ease:Bounce.easeOut})
+  tl.fromTo('#text-3', 1.5, {scale:0}, {scale:1, ease:Bounce.easeOut, delay:1})
+  tl.fromTo('#frisbee', 1.5, {scale:0}, {scale:1, ease:Bounce.easeOut})
+  tl.fromTo('#frisbee', 1, {x:0, y:0}, {x:80, y:-80, ease:Power1.easeInOut})
+  tl.add(spinFrisbee);
+}  
 
 var scrollJuegos = true;
 
@@ -412,6 +478,7 @@ $.event.add(window, "scroll", function() {
               });
 
               Juegos();
+              otherToys();
               scrollJuegos = false;
           } 
       } 

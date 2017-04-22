@@ -267,7 +267,7 @@ body {
 #juegos h2 {
     font-family: 'comic_zine_otregular';
     color: #F2FFE3;
-    font-size: 100px;
+    font-size: 93px;
     font-weight: 100;
     margin: 0;
     padding: 35px;
@@ -296,12 +296,12 @@ body {
 
 .navbar-nav > li {
     width: 109px;
-    margin: 0 53px 0 0;
+    margin: 0 81px 0 0;
     text-align: center;
 }
 
 .yourClass .navbar-nav > li {
-    margin: 0 43px 0 0;
+    margin: 0 68px 0 0;
 }
 
 .yourClass .navbar-nav > li.porque {
@@ -503,7 +503,7 @@ body {
     margin-left: -12px;
     padding: 73px 30px;
     text-align: center;
-    color: #fff;
+    color: #D67E48;
     opacity: 0;
     cursor: default;
     font-size: 0.55em;
@@ -542,7 +542,7 @@ body {
     left: 57%;
     margin-left: -104px;
     top: 52%;
-    background: #673ab7;
+    background: #f7d15c;
     -webkit-transform: translate3d(0,-60%,0) rotate3d(0,0,1,45deg);
     transform: translate3d(0,-60%,0) rotate3d(0,0,1,45deg);
 }
@@ -683,7 +683,9 @@ bootstrap.min.css:5
 }
 
 .hair-text,
-#brush {
+#brush,
+.ear-text,
+.teeth-text {
     opacity: 0;
     display: none;
 }
@@ -737,16 +739,24 @@ bootstrap.min.css:5
     color: #fee187;
 }
 
-/*.frisbee-container {
-    margin-top: 250px;
+.frisbee-container {
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin-top: 550px;
     position: absolute;
-    margin-left: 16px;
 }
 
-#ball-animation {
-    margin-top: 120px;
+.bone-container {
     position: absolute;
-}*/
+    margin-top: 56px;
+    margin-left: 93px;
+}
+
+.bone-container
+.frisbee-container {
+    display: none;
+}
 
 #juegos h2 {
     font-size: 60px;
@@ -791,4 +801,37 @@ bootstrap.min.css:5
 
 .text-3 {
     margin: 0 63px 0 0;
+}
+
+#flip-ear {
+    position: absolute;
+    margin: -52px 0 0 300px;
+    width: 114px;
+    height: 92px;
+    padding-top: 52px;
+    padding-left: 34px;
+    z-index: 9;
+    display: none;
+    opacity: 0;
+}
+
+#wipe {
+    position: absolute;
+    margin: -9px 0 0 284px;
+    display: none;
+    z-index: 9;
+}
+
+#tooth-brush {
+    position: absolute;
+    margin: 150px 0 0 367px;
+    display: none;
+    z-index: 10;
+}
+
+#espuma {
+    position: absolute;
+    margin: 466px 0 0 -400px;
+    opacity: 0;
+    z-index: 9;
 }
