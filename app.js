@@ -141,12 +141,10 @@ $.event.add(window, "scroll", function() {
      
 
     if (top >= 79) {
-        nav.addClass( "yourClass" );
+        nav.addClass( "singleNav" );
     } else {
-        nav.removeClass( "yourClass" )
+        nav.removeClass( "singleNav" )
     }
-
-    // console.log(top); 
 
     var origenArrow = document.getElementById("origen-arrow");
 
@@ -191,11 +189,9 @@ function Cuidados() {
     tl6.fromTo('#hidden-eyes-black', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3});
 
     Cuidado1();
-
 }
 
 function Cuidado1() {
-
     var tl = new TimelineMax();
 
     function lima() {
@@ -204,8 +200,7 @@ function Cuidado1() {
         limatl.fromTo('#hand', 0.8, {x: 0}, {x: 160, ease: Power0.easeNone})
         limatl.fromTo('#hand', 0.8, {x: 160}, {x: 0, ease: Power0.easeNone});
     }  
-    tl.add(lima);
-    
+    tl.add(lima); 
 }
 
 function Cuidado2() {
@@ -316,7 +311,6 @@ function Padecimientos() {
     tl.fromTo('#text-for-numbers-2', 1, {opacity:0}, {opacity:1, ease:Power1.easeOut})
      tl.fromTo('#num-3', 1, {scale:0}, {scale:50, ease:Bounce.easeOut, delay:2})
     tl.fromTo('#text-for-numbers-3', 1, {opacity:0}, {opacity:1, ease:Power1.easeOut});
-    // tl.fromTo('.hidden-eyes', 0.4, {opacity:0}, {opacity:1, ease:Power1.easeInOut,delay:3})
 
 }
 

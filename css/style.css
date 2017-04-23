@@ -288,7 +288,7 @@ body {
     transition : visibility 0.5s, opacity 0.5s linear;
 }
 
-.yourClass .navbar-nav li img {
+.singleNav .navbar-nav li img {
     visibility : hidden;
     opacity : 0;
     display: none;
@@ -300,11 +300,11 @@ body {
     text-align: center;
 }
 
-.yourClass .navbar-nav > li {
+.singleNav .navbar-nav > li {
     margin: 0 68px 0 0;
 }
 
-.yourClass .navbar-nav > li.porque {
+.singleNav .navbar-nav > li.porque {
     width: 183px;
 }
 
@@ -319,7 +319,7 @@ body {
     border-color: transparent;
 }
 
-.navbar-default.yourClass {
+.navbar-default.singleNav {
     background-color: rgba(0, 0, 0, 0.61);
     padding: 0;
 }
@@ -349,13 +349,6 @@ body {
     position: relative;
 }
 
-/*#adopcion-bubble {
-    margin-top: 19.2%;
-    left: -54px;
-    height: 96px;
-    position: relative;
-}*/
-
 .adopcion-text {
     margin-top: -332px;
     width: 297px;
@@ -381,13 +374,12 @@ body {
 /*tooltip*/
 
 .color-5 {
-    /* background: #e4eaea; */
     width: 200px;
     float: left;
     margin-top: -543px;
 }
 
-.color-5 .codrops-demos a {
+.color-5 .tooltip-cont a {
     color: #e35583;
 }
 
@@ -397,8 +389,7 @@ body {
     text-align: center;
 }
 
-/* Dummy elements */
-.dummy {
+.text-for-tooltip {
     text-align: left;
     padding: 1em;
     min-height: 300px;
@@ -406,13 +397,13 @@ body {
     font-weight: 300;
 }
 
-.dummy-menu {
+.tooltip-text-menu {
     max-width: 16%;
     margin: 4em 11em;
 }
 
-.dummy-menu ul,
-.dummy-team ul {
+.tooltip-text-menu ul,
+.tooltip-team ul {
     list-style: none;
     text-align: center;
     padding: 0;
@@ -420,14 +411,13 @@ body {
     margin-top: 60px;
 }
 
-.dummy-menu ul li {
-    /*display: inline-block;*/
+.tooltip-text-menu ul li {
     position: relative;
     margin: 0 1em;
     font-size: 1.5em;
 }
 
-.dummy-menu ul li a {
+.tooltip-text-menu ul li a {
     display: inline-block;
     font-weight: 700;
     padding: 0.15em 0.25em 0;
@@ -436,16 +426,13 @@ body {
     color: #F0DEC9;
 }
 
-.dummy-menu-icons ul li {
+.tooltip-text-menu-icons ul li {
     width: 2em;
     height: 2em;
     font-size: 2em;
     line-height: 1.75;
     margin-bottom: 25px;
 }
-
-/*tooltip mas*/
-
 
 .tooltip2 {
     display: inline;
@@ -474,7 +461,6 @@ body {
 .reason-9-active,
 .reason-10-active {
     margin-top: -113px;
-    /*display: none;*/
     transition: opacity 0.5s ease-out;
     opacity: 0; 
 }
@@ -550,12 +536,6 @@ body {
 #right-col .tooltip-content::after {
     left: 100%;
     margin-left: -26px;
-}
-bootstrap.min.css:5
-:after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 #porque h2 {
