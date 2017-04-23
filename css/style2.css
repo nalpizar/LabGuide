@@ -59,7 +59,7 @@ body {
 
 .pink-bubble {
 	position: absolute;
-    margin-top: 225px;
+    margin-top: 15.2%;
     z-index: 0;
 }
 
@@ -148,10 +148,10 @@ body {
 }
 
 #origen img {
-    width: 545px;
+    width: 45%;
     height: auto;
-    top: 120px;
-    left: 688px;
+    top: 11%;
+    left: 47%;
     position: absolute;
 }
 
@@ -254,7 +254,7 @@ body {
 }
 
 .lab-head-container {
-    width: 864px;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -273,12 +273,6 @@ body {
     padding: 35px;
     text-align: center;
 }   
-
-#landing h1, 
-#landing h2 {
-    padding-bottom: 0;
-}   
-
 
 #navigation {
     z-index: 9999999;
@@ -501,7 +495,7 @@ body {
     font-size: 0.55em;
     line-height: 1.4;
     pointer-events: none;
-    /*font-family: 'Kalam', cursive;*/
+    font-family: 'Kalam', cursive;
     -webkit-transform: scale3d(0.1,0.2,1);
     transform: scale3d(0.1,0.2,1);
     -webkit-transform-origin: 50% 120%;
@@ -583,7 +577,7 @@ body {
     height: 460px;
     position: relative;
     top: -140px;
-    left: 719px;
+    left: 874px;
     text-indent: 90px;
     transform-origin: center top;
     background-image: url('../img/box.png');
@@ -610,13 +604,12 @@ body {
 
 #cuidados h2 {
     float: right;
+    margin-right: 153px;
     padding: 73px 0;
     width: 400px;
     font-size: 52px;
-    position: absolute;
+    position: relative;
     z-index: 9999;
-    margin-left: 742px;
-    margin-top: -339px;
 }
 
 .box-text {
@@ -639,8 +632,8 @@ body {
 .board {
     width: 500px;
     float: right;
-    position: absolute;
-    margin: 9px 0 0 -95px;
+    position: relative;
+    margin: 9px -462px 0 0;
     z-index: 999;"
 }
 
@@ -717,10 +710,6 @@ body {
     float: left;
 }
 
-.svg-numbers svg text {
-    font-family: 'comic_zine_otregular';
-}
-
 .text-for-numbers {
     color: #F2FFE3;
     opacity: 0;
@@ -783,7 +772,7 @@ body {
 }
 
 .text-1 {
-    margin: -165px 63px 0 0;
+    margin: -120px 63px 0 0;
 }
 
 .text-2 {
